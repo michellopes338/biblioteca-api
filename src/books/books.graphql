@@ -1,0 +1,21 @@
+input BookInput {
+  name: String!
+  price: Float!
+  description: String!
+} 
+
+type Books {
+  id: ID!
+  name: String!
+  price: Float!
+  description: String!
+}
+
+type Query {
+  allBooks(limit: Int, offset: Int): [Books]
+  oneBook(id: ID!): Books
+}
+
+type Mutation {
+  insertBook(input: BookInput): Books
+}
